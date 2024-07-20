@@ -1,0 +1,718 @@
+/* Link Google Fonts Start */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+/* Link Google Fonts End */
+
+/* Variabel Css Start */
+:root {
+  --merah-tua: #be0d14;
+  --merah: #ed1c24;
+  --kuning: #f5ea0e;
+  --orange: #ff8a00;
+  --hitam: #151515;
+  --biru: #0019ff;
+  --hijau: #24ff00;
+  --putih: #f5f5f5;
+  --abu2: #e8e8e8;
+  --font-family: "Inter", sans-serif;
+}
+/* Variabel Css End */
+
+* {
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  font-weight: bold;
+}
+
+/* =============== Navigation ================ */
+.navigation {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background-image: linear-gradient(var(--merah), var(--merah-tua));
+  border-left: 10px solid linear-gradient(var(--merah), var(--merah-tua));
+  transition: 0.5s;
+  overflow: hidden;
+}
+.navigation.active {
+  width: 80px;
+}
+
+.navigation ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.navigation ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.navigation ul li:hover {
+  background-color: var(--putih);
+}
+
+.navigation ul li:nth-child(1) {
+  margin-bottom: 40px;
+  pointer-events: none;
+}
+
+.navigation ul li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: var(--putih);
+  border-radius: 50%;
+}
+.navigation ul li:hover a {
+  color: var(--merah-tua);
+}
+
+.head-icon {
+  background-color: var(--merah-tua);
+}
+
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 75px;
+  text-align: center;
+}
+
+.navigation ul li a .icon img {
+  width: 45%;
+  height: 70%;
+  padding-top: 10px;
+  margin-top: 5px;
+}
+
+.navigation ul li a .icon ion-icon {
+  font-size: 1.75rem;
+}
+
+.navigation ul li a .title {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
+}
+
+.navigation ul li.active {
+  background-color: var(--putih); /* Warna latar belakang saat tombol aktif */
+}
+
+.navigation ul li.active a {
+  color: var(--merah-tua); /* Warna teks saat tombol aktif */
+}
+
+/* ===================== Main ===================== */
+.main {
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  background: var(--putih);
+  transition: 0.5s;
+}
+.main.active {
+  width: calc(100% - 80px);
+  left: 80px;
+}
+
+.topbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.user-container {
+  display: flex;
+  align-items: center;
+}
+
+.user {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  margin-left: 10px; /* Tambahkan margin agar ada jarak antara nama dan logo */
+}
+
+.nama-user {
+  margin-right: -52rem;
+}
+
+/* Responsif Name */
+@media (max-width: 768px) {
+  .topbar {
+    flex-direction: row;
+    justify-content: space-between;
+    height: auto;
+  }
+
+  .user-container {
+    margin-left: auto;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .nama-user {
+    text-align: right;
+    margin-right: 10px; /* Pastikan ini tetap 10px agar tetap rapi */
+  }
+}
+
+.user img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ====================== TOMBOL ACTION RESPONSIVE ====================== */
+/* Styles for action buttons */
+.details .recentOrders table tr td .action {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 2px 0;
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.details .recentOrders table tr td .action.lihat {
+  background: var(--hijau, #28a745); /* Tambahkan nilai default jika variabel tidak didefinisikan */
+}
+
+.details .recentOrders table tr td .action.edit {
+  background: var(--orange, #ff9800); /* Tambahkan nilai default jika variabel tidak didefinisikan */
+}
+
+.details .recentOrders table tr td .action.hapus {
+  background: var(--merah, #dc3545); /* Tambahkan nilai default jika variabel tidak didefinisikan */
+}
+
+.details .recentOrders table tr td .action:hover {
+  opacity: 0.8;
+}
+
+/* Table Styles */
+.details .recentOrders {
+  width: 100%;
+  margin: 20px 0;
+  overflow-x: auto;
+}
+
+.details .recentOrders .cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+}
+
+.details .recentOrders .cardHeader h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.details .recentOrders .searchBox {
+  display: flex;
+  width: 30%;
+}
+
+.details .recentOrders .searchBox input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.details .recentOrders .searchBox button {
+  padding: 10px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 14px;
+  height: 100%;
+  box-sizing: border-box;
+  margin-top: 6px;
+}
+
+.details .recentOrders table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.details .recentOrders table th,
+.details .recentOrders table td {
+  padding: 8px; /* Lebih kecil dari sebelumnya */
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.details .recentOrders table th {
+  background-color: #f8f8f8;
+  font-weight: bold;
+}
+
+.details .recentOrders table td {
+  font-weight: normal;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .details .recentOrders .searchBox {
+      width: 100%;
+  }
+
+  .details .recentOrders .searchBox input,
+  .details .recentOrders .searchBox button {
+      padding: 10px; /* Ukuran padding lebih kecil */
+      font-size: 14px; /* Ukuran font lebih kecil */
+  }
+
+  .details .recentOrders .searchBox button {
+      margin-top: 5px;
+  }
+
+.details .recentOrders table {
+    width: 100%;
+}
+
+.details .recentOrders table thead {
+    display: none; /* Sembunyikan header tabel di perangkat kecil */
+}
+
+.details .recentOrders table tr {
+    display: block;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+}
+
+.details .recentOrders table tr:last-child {
+    margin-bottom: 0;
+}
+
+.details .recentOrders table tr td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center; /* Teks di tengah */
+    padding: 8px; /* Lebih kecil dari sebelumnya */
+    position: relative;
+    border-bottom: 1px solid #ddd;
+}
+
+.details .recentOrders table tr td::before {
+    content: attr(data-label);
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left; /* Label tetap di kiri */
+}
+
+.details .recentOrders table tr td:last-child {
+    border-bottom: 0;
+}
+}
+
+/* ===================== Cards ===================== */
+.cardBox {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.card .iconBx {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.card .Surat-Masuk,
+.card .Surat-Keluar,
+.card .Jumlah-Lp {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+.card .cardName {
+  font-size: 1rem;
+  color: #777;
+}
+
+.card-jumlah-surat {
+  background: linear-gradient(to bottom right, #4caf50, #8bc34a);
+}
+
+.card-admin-aktif {
+  background: linear-gradient(to bottom right, #ffeb3b, #ffc107);
+}
+
+.card-jumlah-lp {
+  background: linear-gradient(to bottom right, #ff5722, #ff9800);
+}
+
+/* ===================== Charts ===================== */
+.chartBox {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.chart {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.chart .chartTitle {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.chart .chartValue {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* ===================== Responsive Design ===================== */
+@media (max-width: 768px) {
+  .cardBox,
+  .chartBox {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .card,
+  .chart {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+
+/* ======================FOOTER STYLE================================== */
+/* Footer Styles */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--putih); /* Background color of footer */
+    color: var(--hitam); /* Text color of footer */
+    text-align: left;
+    padding: 3px 10px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Optional: add shadow for better visibility */
+    z-index: 1000; /* Ensure it stays above other content */
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.footer .footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .footer-logo {
+    height: 20px; /* Adjust logo size as needed */
+    margin-right: 5px; /* Space between logo and text */
+}
+
+@media (max-width: 768px) {
+    .footer {
+        width: 100%; /* Ensure full width on mobile */
+        text-align: center; /* Center align text for mobile */
+        justify-content: center; /* Center align items for mobile */
+        padding: 10px; /* Additional padding for better spacing */
+        box-sizing: border-box;
+    }
+
+    .footer .footer-content {
+        flex-direction: column; /* Stack content vertically on mobile */
+        align-items: center; /* Center align items */
+    }
+
+    .footer .footer-logo {
+        margin-bottom: 5px; /* Space between logo and text for mobile view */
+    }
+}
+
+
+
+/* ====================== Responsive Design ========================== */
+@media (max-width: 991px) {
+  .navigation {
+    left: -300px;
+  }
+  .navigation.active {
+    width: 300px;
+    left: 0;
+  }
+  .main {
+    width: 100%;
+    left: 0;
+  }
+  .main.active {
+    left: 300px;
+  }
+  .cardBox {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .details {
+    grid-template-columns: 1fr;
+  }
+  .recentOrders {
+    overflow-x: auto;
+  }
+  .status.inProgress {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardBox {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cardHeader h2 {
+    font-size: 20px;
+  }
+  .user {
+    min-width: 40px;
+  }
+  .navigation {
+    width: 100%;
+    left: -100%;
+    z-index: 1000;
+  }
+  .navigation.active {
+    width: 100%;
+    left: 0;
+  }
+  .toggle {
+    z-index: 10001;
+  }
+  .main.active .toggle {
+    color: #fff;
+    position: fixed;
+    right: 0;
+    left: initial;
+  }
+}
+
+/* End */
+
+/* Style Surat Masuk */
+/* CSS untuk formulir Surat Masuk */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333333;
+}
+
+.form-group {
+  margin: 0 auto 15px;
+  width: 80%;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333333;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #333333;
+}
+
+select option:first-child {
+  color: #999999; /* Warna placeholder */
+}
+
+.file-upload {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.file-upload .upload-button {
+  display: inline-block;
+  padding: 8px 15px;
+  margin-right: 10px;
+  background-color: #ffd700;
+  color: #333333;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.file-upload input[type="file"] {
+  display: none;
+}
+
+.file-upload span {
+  color: #333333;
+  font-size: 12px;
+}
+
+.submit-button-container {
+  text-align: center; /* Memusatkan tombol submit */
+}
+
+.submit-button {
+  width: auto; /* Menyesuaikan lebar tombol dengan kontennya */
+  padding: 10px 20px;
+  background-image: linear-gradient(#24ff00, #1dd700);
+  color: var(--hitam);
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: inline-block; /* Membuat tombol inline-block agar bisa dipusatkan */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Menambahkan efek bayangan */
+}
+
+.submit-button:hover {
+  background-image: linear-gradient(#0f6d00, #0c5301);;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .file-upload .upload-button {
+    padding: 6px 12px;
+  }
+
+  .file-upload span {
+    font-size: 10px;
+  }
+
+  .submit-button {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+/* Style Surat Masuk End */
+
+/* Style Laporan Polisi Start */
+
+/* Style Laporan Polisi End */
+

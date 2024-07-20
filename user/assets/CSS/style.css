@@ -1,0 +1,190 @@
+/* Link Google Fonts Start */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+/* Link Google Fonts End */
+
+/* Variabel Css Start */
+:root {
+    --merah-tua: #BE0D14;
+    --merah: #ED1C24;
+    --kuning: #F5EA0E;
+    --orange: #FF8A00;
+    --hitam: #151515;
+    --biru: #0019FF;
+    --hijau: #24FF00;
+    --putih: #F5F5F5;
+    --abu2: #e8e8e8;
+    --font-family: "Inter", sans-serif;
+}
+/* Variabel Css End */
+
+/* Style Login Start */
+body {
+    font-family: var(--font-family);
+    background-image: linear-gradient(var(--merah), var(--merah-tua));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 10px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    background-image: linear-gradient(var(--putih), var(--abu2));
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: var(--font-family);
+    text-align: center;
+}
+
+.login-container h2 {
+    font-family: var(--font-family);
+    color: var(--merah);
+    text-shadow: 2px 2px 1px rgba(21, 21, 21, 0.2);
+    font-size: 24px;
+}
+
+.logo-container {
+    width: 100px;
+    height: 100px;
+    background-color: var(--putih);
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 60px;
+    height: 75px;
+}
+
+.container {
+    padding: 20px;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px 15px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid var(--abu2);
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 10px auto;
+}
+
+.login {
+    background-image: linear-gradient(var(--merah), var(--merah-tua));
+    color: white;
+    padding: 10px 20px;
+    margin: 2px 0;
+    border: none;
+    cursor: pointer;
+    width: 60%;
+    max-width: 300px;
+    border-radius: 5px;
+    margin: 3px auto;
+    font-size: 15px;
+    font-family: var(--font-family);
+    font-weight: bold;
+}
+
+.login:hover {
+    opacity: 0.8;
+}
+
+.verify-email {
+    background-color: var(--orange);
+    color: white;
+    padding: 10px 20px;
+    margin: 10px auto; /* Sesuaikan margin sesuai kebutuhan */
+    border: none;
+    cursor: pointer;
+    width: 100%; /* Sesuaikan lebar sesuai kebutuhan */
+    max-width: 300px; /* Maksimum lebar tombol */
+    border-radius: 5px;
+    font-family: var(--font-family);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.verify-email:hover {
+    opacity: 0.8;
+}
+
+
+.button-akun {
+    color: var(--biru);
+    text-decoration: none;
+    padding: 3px 0px;
+    font-size: 12px;
+}
+
+.button-akun a {
+    padding: 2px;
+}
+
+.button-akun a:hover {
+    color: #0315b8;
+}
+
+.recaptcha-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.g-recaptcha {
+    transform: scale(0.70); /* Adjust the scale as needed */
+    transform-origin: 0 0;
+}
+
+/* Additional CSS for password visibility toggle */
+.password-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+}
+
+.password-container input[type="password"] {
+    width: 100%;
+    padding-right: 40px; /* ensure space for the icon */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--abu2);
+}
+
+.toggle-password i {
+    font-size: 18px;
+}
+
+@media (max-width: 600px) {
+    .password-container input[type="password"] {
+        width: 100%;
+        padding-right: 30px; /* ensure space for the icon */
+    }
+
+    .toggle-password {
+        right: 5px;
+    }
+
+    .toggle-password i {
+        font-size: 16px;
+    }
+}
+/* Style Login End */
